@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Drum Kit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="keys">
+      <div data-animal="lion" data-key="65" class="key lion">
+        <kbd>A</kbd>
+        <span class="sound">lion</span>
+      </div>
+      <div data-animal="dog" data-key="83" class="key dog">
+        <kbd>S</kbd>
+        <span class="sound">dog</span>
+      </div>
+      <div data-animal="wolf" data-key="68" class="key wolf">
+        <kbd>D</kbd>
+        <span class="sound">wolf</span>
+      </div>
+      <div data-animal="snake" data-key="70" class="key snake">
+        <kbd>F</kbd>
+        <span class="sound">snake</span>
+      </div>
+      <div data-animal="bear" data-key="71" class="key bear">
+        <kbd>G</kbd>
+        <span class="sound">bear</span>
+      </div>
+      <div data-animal="monkey" data-key="72" class="key monkey">
+        <kbd>H</kbd>
+        <span class="sound">monkey</span>
+      </div>
+
+    <audio data-key="65" src="./animals/sounds/lion.wav"></audio>
+    <audio data-key="83" src="./animals/sounds/bark.wav"></audio>
+    <audio data-key="70" src="./animals/sounds/rattlesnakerattle.wav"></audio>
+    <audio data-key="71" src="./animals/sounds/beargrwl.wav"></audio>
+    <audio data-key="72" src="./animals/sounds/monkey2.wav"></audio>
+    <audio data-key="68" src="./animals/sounds/wolf6.wav"></audio>
+
+    <script>
+      window.addEventListener("keydown", function (e) {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+        if (!audio) return; // stops the function form running.
+        audio.currentTime = 0; //rewind to current time.
+        audio.play();
+        key.classList.add("playing");
+      });
+
+      const keys = document.querySelectorAll(".key");
+
+      function removeTransition(e) {
+        if (e.propertyName !== "transform") return; // skip if its not a transform
+        this.classList.remove("playing");
+      }
+
+      keys.forEach((key) =>
+        key.addEventListener("transitionend", removeTransition)
+      );
+    </script>
+  </body>
+</html>

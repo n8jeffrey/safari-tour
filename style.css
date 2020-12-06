@@ -1,0 +1,99 @@
+html {
+  font-size: 10px;
+  background: url("./animals/background.jpg") bottom center;
+  background-size: cover;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.keys {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.key {
+  border: 0.4rem solid black;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem 0.5rem;
+  transition: all 1.5s ease-in-out;
+  width: 10rem;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 0.5rem black;
+}
+
+.playing {
+  transform: scale(1.5);
+  color: rgba(0, 0, 0, 0);
+  text-shadow: none;
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #ffc600;
+}
+
+.lion.playing {
+  background-image: url("./animals/icons/161-lion.svg");
+  z-index: 10;
+}
+.lion.playing span {
+  color: rgba(0, 0, 0, 0);
+}
+.dog.playing {
+  background-image: url("./animals/icons/165-dog.svg");
+}
+.dog.playing span {
+  color: rgba(0, 0, 0, 0);
+}
+.snake.playing {
+  background-image: url("./animals/icons/086-snake.svg");
+}
+.snake.playing span {
+  color: rgba(0, 0, 0, 0);
+}
+.bear.playing {
+  background-image: url("./animals/icons/033-bear.svg");
+}
+.bear.playing span {
+  color: rgba(0, 0, 0, 0);
+}
+.monkey.playing {
+  background-image: url("./animals/icons/150-monkey.svg");
+}
+.monkey.playing span {
+  color: rgba(0, 0, 0, 0);
+}
+.wolf.playing {
+  background-image: url("./animals/icons/116-wolf.svg");
+}
+.wolf.playing span {
+  color: rgba(0, 0, 0, 0);
+}
+.bear.playing {
+  background-image: url("./animals/icons/033-bear.svg");
+}
+.bear.playing span {
+  color: rgba(0, 0, 0, 0);
+}
